@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -7,7 +6,6 @@
     <title>friend with AI | 你的 AI 時代對練夥伴</title>
     <style>
         :root {
-            /* Warm & Soft Palette - OKLCH */
             --bg:      oklch(97% 0.018 70);
             --surface: oklch(99% 0.008 70);
             --fg:      oklch(22% 0.02 50);
@@ -49,9 +47,9 @@
             padding: 0 var(--container-padding);
         }
 
-        /* Navigation */
+        /* Nav */
         nav {
-            padding: 2.5rem 0;
+            padding: 2rem 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -63,19 +61,17 @@
             font-weight: 700;
             color: var(--fg);
             text-decoration: none;
-            letter-spacing: -0.02em;
         }
 
         .nav-links {
             display: flex;
-            gap: 2.5rem;
+            gap: 2rem;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--muted);
-            font-size: 0.95rem;
-            font-weight: 500;
+            font-size: 0.9rem;
             transition: color 0.2s;
         }
 
@@ -83,56 +79,43 @@
             color: var(--fg);
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
-            padding: 10rem 0 8rem;
+            padding: 8rem 0;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: clamp(3.5rem, 10vw, 5.5rem);
-            margin-bottom: 2rem;
-            color: var(--fg);
+            font-size: clamp(3rem, 8vw, 5rem);
+            margin-bottom: 1.5rem;
         }
 
         .hero p {
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             color: var(--muted);
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
         }
 
         .cta-button {
             display: inline-block;
             background-color: var(--accent);
             color: white;
-            padding: 1.2rem 2.8rem;
+            padding: 1rem 2rem;
             border-radius: 100px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.2s;
+            font-weight: 500;
+            transition: transform 0.2s, filter 0.2s;
         }
 
         .cta-button:hover {
-            transform: translateY(-4px);
+            transform: translateY(-2px);
             filter: brightness(1.1);
-        }
-
-        /* Section Layouts */
-        section {
-            padding: 8rem 0;
-        }
-
-        .section-title {
-            font-size: 2.8rem;
-            margin-bottom: 3rem;
-            text-align: left;
         }
 
         /* Story Section */
         .section-story {
+            padding: 6rem 0;
             background-color: var(--surface);
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
@@ -140,134 +123,115 @@
 
         .story-grid {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 6rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
             align-items: center;
+        }
+
+        .story-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
         }
 
         .story-content p {
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.5rem;
             color: var(--fg);
-            font-size: 1.2rem;
-            opacity: 0.9;
+            font-size: 1.1rem;
         }
 
-        .story-content strong {
-            color: var(--accent);
-            font-weight: 600;
-        }
-
-        .story-image-placeholder {
+        .story-image {
             background-color: var(--bg);
             aspect-ratio: 4/5;
-            border-radius: 32px;
+            border-radius: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .story-image-placeholder::after {
-            content: "AI is the new UI";
-            font-family: var(--font-display);
             font-style: italic;
             color: var(--muted);
-            opacity: 0.5;
-            font-size: 1.2rem;
+            border: 1px solid var(--border);
         }
 
         /* Audience Section */
         .section-audience {
-            background-color: var(--bg);
+            padding: 6rem 0;
         }
 
-        .audience-card {
+        .audience-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .audience-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .audience-box {
             background-color: var(--surface);
-            padding: 4rem;
-            border-radius: 32px;
+            padding: 3rem;
+            border-radius: 24px;
             border: 1px solid var(--border);
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
-            position: relative;
         }
 
-        .audience-card h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+        .audience-box h3 {
+            margin-bottom: 1rem;
             color: var(--accent);
-        }
-
-        .audience-card p {
-            font-size: 1.15rem;
-            margin-bottom: 1.2rem;
-            color: var(--fg);
         }
 
         /* Services Section */
         .section-services {
+            padding: 6rem 0;
             background-color: var(--surface);
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
+            gap: 2rem;
         }
 
         .service-card {
-            padding: 3.5rem 2.5rem;
-            border-radius: 32px;
+            padding: 2.5rem;
+            border-radius: 24px;
             border: 1px solid var(--border);
             background-color: var(--bg);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
+            transition: transform 0.2s;
         }
 
         .service-card:hover {
-            transform: translateY(-12px);
-            border-color: var(--accent);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+            transform: translateY(-8px);
         }
 
         .service-card h3 {
-            font-size: 1.8rem;
-            color: var(--fg);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
 
         .service-card p {
             color: var(--muted);
-            font-size: 1.05rem;
-            line-height: 1.7;
+            font-size: 0.95rem;
         }
 
         /* Footer */
         footer {
-            padding: 6rem 0;
+            padding: 4rem 0;
             border-top: 1px solid var(--border);
             text-align: center;
             color: var(--muted);
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
-        /* Utility */
-        .text-center { text-align: center; }
-        .mb-4 { margin-bottom: 1rem; }
-        .mt-4 { margin-top: 4rem; }
-
-        @media (max-width: 992px) {
+        @media (max-width: 768px) {
             .story-grid {
                 grid-template-columns: 1fr;
-                gap: 4rem;
             }
             .services-grid {
                 grid-template-columns: 1fr;
             }
             .hero h1 {
-                font-size: 3.5rem;
+                font-size: 3rem;
             }
         }
     </style>
@@ -278,85 +242,79 @@
             <a href="index.html" class="logo">friend with AI</a>
             <div class="nav-links">
                 <a href="#story">關於我</a>
-                <a href="#audience">服務對象</a>
-                <a href="#services">核心服務</a>
-                <a href="register.html">立即諮詢</a>
+                <a href="#services">具體服務</a>
+                <a href="register.html">立即報名</a>
             </div>
         </nav>
     </div>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <h1>你的 AI 時代<br>對練夥伴</h1>
-                <p>打破轉型的焦慮，用 HCI 視野與 AI 算力，為你的企業梳理出未來的體驗框架。</p>
-                <div class="mt-4">
-                    <a href="register.html" class="cta-button">開啟對練對話</a>
-                </div>
-            </div>
-        </section>
+    <section class="hero">
+        <div class="container">
+            <h1>你的 AI 時代<br>對練夥伴</h1>
+            <p>打破轉型的焦慮，用 HCI 視野與 AI 算力，為你的企業梳理出未來的體驗框架。</p>
+            <a href="register.html" class="cta-button">開啟對練對話</a>
+        </div>
+    </section>
 
-        <!-- Founder Story -->
-        <section id="story" class="section-story">
-            <div class="container">
-                <div class="story-grid">
-                    <div class="story-content">
-                        <h2 class="section-title">為什麼是我？</h2>
-                        <p>身為具備人機互動（HCI）視野的資工系學生，我深刻體悟到「AI is the new UI」。</p>
-                        <p>我的超能力不僅是寫程式，而是<strong>「熟練地與 AI 協作推進專案」</strong>。在與 AI 深度對話的過程中，我能看見傳統人類思維與舊介面中看不見的「盲點」。</p>
-                        <p>我不是傳統的軟體外包商，而是能利用 AI 算力幫你打破框架、梳理體驗的 <strong>Sparring Partner（對練夥伴）</strong>。</p>
-                    </div>
-                    <div class="story-image-placeholder">
-                        <!-- Visual representation of Human-AI collaboration -->
-                    </div>
+    <section id="story" class="section-story">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-content">
+                    <h2>為什麼是我？</h2>
+                    <p>身為具備人機互動（HCI）視野的資工系學生，我深刻體悟到「AI is the new UI」。</p>
+                    <p>我的超能力不僅是寫程式，而是<strong>「熟練地與 AI 協作推進專案」</strong>。在與 AI 深度對話的過程中，我能看見傳統人類思維與舊介面中看不見的「盲點」。</p>
+                    <p>我不是傳統的軟體外包商，而是能利用 AI 算力幫你打破框架、梳理體驗的 <strong>Sparring Partner（對練夥伴）</strong>。</p>
+                </div>
+                <div class="story-image">
+                    [ 創辦人與 AI 協作的意象圖 ]
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Target Audience -->
-        <section id="audience" class="section-audience">
-            <div class="container">
-                <div class="text-center mb-4">
-                    <h2 class="section-title text-center">我為誰服務？</h2>
-                </div>
-                <div class="audience-card">
-                    <h3>傳統企業急於轉型的二代接班人</h3>
-                    <p>你承接了父輩江山，卻對 AI 浪潮感到深深的焦慮與被淘汰的恐懼。</p>
-                    <p>你看著競爭對手已經在使用流暢的 AI 驅動介面，而自家的系統依然是填鴨式、反人類的舊表單，導致年輕世代客戶不斷流失。</p>
-                    <p style="margin-top: 1.5rem;"><strong>你知道這不能再等，但你不知從何改起。</strong></p>
-                </div>
+    <section class="section-audience">
+        <div class="container">
+            <div class="audience-header">
+                <h2>我為誰服務？</h2>
+                <p>專為急於轉型、卻不知從何下手的企業領導者設計</p>
             </div>
-        </section>
+            <div class="audience-box">
+                <h3>傳統企業急於轉型的二代接班人</h3>
+                <p>你承接了父輩江山，卻對 AI 浪潮感到深深的焦慮。你看著競爭對手已經在使用流暢的 AI 驅動介面，而自家的系統依然是填鴨式、反人類的舊表單。</p>
+                <p style="margin-top: 1rem;"><strong>年輕世代客戶正在流失，而你知道這不能再等。</strong></p>
+            </div>
+        </div>
+    </section>
 
-        <!-- Services -->
-        <section id="services" class="section-services">
-            <div class="container">
-                <h2 class="section-title text-center">具體服務內容</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <h3>敏捷 PoC 原型開發</h3>
-                        <p>不賣空泛的報告。我在短短幾週內，將企業的痛點轉化為「高擬真、可互動的 AI 介面原型」。</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>極速收斂認知</h3>
-                        <p>幫助二代老闆極速收斂認知，讓你能拿著看得見、摸得到的未來，去說服內部老臣與董事會。</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>體驗框架打破</h3>
-                        <p>利用 AI 協作的高效能力，幫你打破舊有框架，重新定義客戶與服務的互動關係。</p>
-                    </div>
+    <section id="services" class="section-services">
+        <div class="container">
+            <div class="audience-header">
+                <h2>具體服務內容</h2>
+                <p>敏捷的 AI 概念驗證（PoC）原型開發</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>極速收斂認知</h3>
+                    <p>不賣空泛的報告。我們在短短幾週內，將你的痛點轉化為高擬真、可互動的原型。</p>
                 </div>
-                <div class="text-center mt-4">
-                    <a href="register.html" class="cta-button">預約初步諮詢</a>
+                <div class="service-card">
+                    <h3>打破老臣框架</h3>
+                    <p>拿著看得見、摸得到的未來，去說服內部老臣與董事會，確認可行性後再進行下一步。</p>
+                </div>
+                <div class="service-card">
+                    <h3>HCI 體驗梳理</h3>
+                    <p>利用 AI 協作的高效能力，重新定義人與數據、人與服務的互動方式。</p>
                 </div>
             </div>
-        </section>
-    </main>
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="register.html" class="cta-button">預約初步諮詢</a>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 friend with AI. 致力於人機協作的溫度感。</p>
+            <p>&copy; 2026 friend with AI. All rights reserved.</p>
         </div>
     </footer>
 </body>
